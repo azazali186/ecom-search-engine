@@ -1,10 +1,5 @@
 <template>
   <div class="searchbox">
-    <svg aria-hidden="true" viewBox="0 0 24 24">
-      <path
-        d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-      />
-    </svg>
     <input
       aria-label="Search for products"
       autocomplete="off"
@@ -12,6 +7,11 @@
       placeholder="Search for products"
       type="search"
     />
+    <select>
+      <option value="hello">Hello</option>
+      <option value="hello">Man</option>
+      <option value="hello">Woman</option>
+    </select>
   </div>
 </template>
 
@@ -28,10 +28,10 @@
   --border-color: #212121;
   --dark-gray: #4a4a4a;
   --light-gray: #747171;
+  --select-width: 150px;
 
   height: var(--box-height);
-  min-width: 561px;
-  max-width: 800px;
+  min-width: 700px;
   position: relative;
 }
 
@@ -40,9 +40,9 @@
   border-radius: var(--border-radius);
   height: 100%;
   width: 100%;
-  padding-left: calc(var(--side-margin) + var(--icon-size) + 4px);
+  padding-left: calc(var(--side-margin) + 4px);
   padding-right: var(--side-margin);
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
   color: var(--dark-gray);
   font-family: "Noto Sans", Verdana, sans-serif;
   font-size: 1rem;
@@ -59,8 +59,29 @@
   height: var(--icon-size);
   width: var(--icon-size);
   position: absolute;
-  left: var(--side-margin);
+  right: var(--side-margin);
   top: var(--icon-vertical-margin);
+}
+
+.searchbox select {
+  position: absolute;
+  width: var(--select-width);
+  right: calc(var(--side-margin) * 1);
+  top: calc(var(--icon-vertical-margin) * 1.4);
+  outline: transparent;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 25px;
+  font-size: 14px;
+  transition: ease-in-out 0.2ms;
+}
+
+.searchbox select:hover{
+  border-color: var(--focus-blue);
+}
+
+.searchbox select:focus{
+  border-color: var(--focus-blue);
 }
 
 .searchbox input[type="search"]:focus {
