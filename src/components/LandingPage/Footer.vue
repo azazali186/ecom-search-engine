@@ -1,5 +1,6 @@
 <template>
   <footer>
+    <Cookie />
     <div>
       <a href="#">Sellers</a>
       <a href="#">Business</a>
@@ -12,6 +13,10 @@
     </div>
   </footer>
 </template>
+
+<script setup>
+import Cookie from '../Cookie.vue/Cookie.vue';
+</script>
 
 <style scoped>
 footer {
